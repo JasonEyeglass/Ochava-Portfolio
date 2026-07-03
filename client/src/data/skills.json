@@ -1,0 +1,35 @@
+[
+  {
+    "category": "Languages",
+    "icon": "code",
+    "iconColor": "teal",
+    "skills": [
+      { "name": "JavaScript" },
+      { "name": "TypeScript" },
+      { "name": "Python", "highlight": true },
+      { "name": "Go" }
+    ]
+  },
+  {
+    "category": "Frameworks",
+    "icon": "layers",
+    "iconColor": "green",
+    "skills": [
+      { "name": "React", "highlight": true },
+      { "name": "Next.js" },
+      { "name": "Node.js" },
+      { "name": "TailwindCSS" }
+    ]
+  },
+  {
+    "category": "Cloud & DevOps",
+    "icon": "cloud",
+    "iconColor": "purple",
+    "skills": [
+      { "name": "AWS" },
+      { "name": "Docker" },
+      { "name": "CI/CD" },
+      { "name": "Kubernetes" }
+    ]
+  }
+]

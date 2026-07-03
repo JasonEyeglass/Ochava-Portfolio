@@ -1,0 +1,39 @@
+[
+  {
+    "id": "saas-dashboard",
+    "layout": "featured",
+    "label": "ENTERPRISE SOLUTION",
+    "title": "Real-time SaaS Dashboard",
+    "description": "Comprehensive monitoring tool built for high-scale data ingestion and instant visualization.",
+    "stack": ["Next.js", "PostgreSQL", "Redis"],
+    "links": { "live": "#", "github": null },
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80"
+  },
+  {
+    "id": "api-gateway",
+    "layout": "compact",
+    "title": "API Gateway Engine",
+    "description": "Low-latency microservices orchestrator processing 10k+ req/sec.",
+    "stack": ["Go", "gRPC"],
+    "links": { "github": "https://github.com/karljasonochava" },
+    "variant": "network"
+  },
+  {
+    "id": "ai-asset-manager",
+    "layout": "visual",
+    "title": "AI Asset Manager",
+    "stack": ["Python", "AWS S3"],
+    "links": { "github": "https://github.com/karljasonochava" },
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80"
+  },
+  {
+    "id": "cicd-pipeline",
+    "layout": "detail",
+    "label": "INTERNAL TOOLS",
+    "title": "Automation CI/CD Pipeline",
+    "description": "Proprietary workflow tools reducing deployment cycles by 40% using containerized runners.",
+    "stack": ["Docker", "Shell", "Terraform"],
+    "links": { "github": "https://github.com/karljasonochava" },
+    "variant": "chevron"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "test-1",
+    "name": "Alex Rivera",
+    "role": "Project Collaborator",
+    "quote": "Karl delivers clean, well-structured code and communicates clearly throughout the development process. A reliable teammate on any web project.",
+    "avatar": null
+  },
+  {
+    "id": "test-2",
+    "name": "Jordan Lee",
+    "role": "Peer Developer",
+    "quote": "His attention to detail in both frontend polish and backend architecture makes him stand out. Always eager to learn and improve.",
+    "avatar": null
+  }
+]
