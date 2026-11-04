@@ -30,3 +30,6 @@ Thumbs.db
 
 # Local AI context dump
 repomix-output.xml
+
+.vercel
+.env*
