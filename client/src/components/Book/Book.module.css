@@ -28,12 +28,50 @@
 .book {
   position: relative;
   flex: 1;
-  width: min(100%, 480px);
+  width: min(100% - 24px, 480px);
   max-height: 860px;
   font-size: min(3vw, 13px);
   perspective: 2000px;
   touch-action: pan-y;
   transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Once open, slide right so the turned page's edge shows at the left like an open book. */
+.opened {
+  transform: translateX(12px);
+}
+
+/* Halfway through a turn the spine sits mid-screen at half size, so both sides show. */
+.peekA {
+  animation: peekA 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-origin: left center;
+}
+
+.peekB {
+  animation: peekB 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-origin: left center;
+}
+
+@keyframes peekA {
+  50% {
+    transform: translateX(50%) scale(0.55);
+  }
+}
+
+@keyframes peekB {
+  50% {
+    transform: translateX(50%) scale(0.55);
+  }
+}
+
+/* the page block under the top page, with its edges showing on the right */
+.opened::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0 0.4em 0.4em 0;
+  background: var(--paper);
+  box-shadow: 2px 1px 0 #e6d9bf, 4px 2px 0 #d9cbb2, 6px 3px 0 #cbbb9f, 0 1.5em 3em rgba(0, 0, 0, 0.55);
 }
 
 .leaf {
@@ -51,13 +89,18 @@
 .face {
   position: absolute;
   inset: 0;
-  overflow-y: auto;
+  overflow: hidden;
   background: var(--paper);
   color: var(--ink);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   box-shadow: 0 1.5em 3em rgba(0, 0, 0, 0.55);
+}
+
+.scroll {
+  overflow-y: auto;
 }
 
 /* spine shading: right pages darken on the left edge, left pages on the right edge */
@@ -134,15 +177,16 @@
     left: 50%;
     width: 50%;
   }
-
-  .face {
-    overflow: hidden;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .book,
   .leaf {
     transition: none;
+  }
+
+  .peekA,
+  .peekB {
+    animation: none;
   }
 }

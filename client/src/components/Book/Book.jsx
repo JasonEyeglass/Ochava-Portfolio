@@ -31,15 +31,20 @@ export default function Book() {
   const max = desktop ? LEAVES.length : PAGES.length - 1;
   const [at, setAt] = useState(0);
   const [lastTurned, setLastTurned] = useState(-1);
+  const [turns, setTurns] = useState(0);
   const cur = Math.min(at, max);
   const swipe = useRef(null);
+  const settle = useRef(0);
 
   const turnTo = (next) => {
     const target = Math.max(0, Math.min(max, next));
     if (target === cur) return;
-    // the leaf that moves last stays on top while it turns
+    // the leaf that moves last stays on top while it turns, then the stack settles
     setLastTurned(target > cur ? target - 1 : target);
     setAt(target);
+    setTurns((n) => n + 1);
+    clearTimeout(settle.current);
+    settle.current = setTimeout(() => setLastTurned(-1), 950);
   };
 
   useEffect(() => {
@@ -80,7 +85,12 @@ export default function Book() {
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) turnTo(cur + (dx < 0 ? 1 : -1));
   };
 
-  const position = !desktop ? '' : cur === 0 ? s.closedFront : cur === max ? s.closedBack : '';
+  // Phones zoom out for each turn so the page can be seen swinging over the spine.
+  // Two identical animations alternate so every turn restarts it.
+  const peek = turns === 0 ? '' : turns % 2 ? s.peekA : s.peekB;
+  const position = !desktop
+    ? `${cur > 0 ? s.opened : ''} ${peek}`
+    : cur === 0 ? s.closedFront : cur === max ? s.closedBack : '';
 
   return (
     <div className={s.desk}>
@@ -94,10 +104,17 @@ export default function Book() {
         {leaves.map(([Front, Back], i) => {
           const flipped = i < cur;
           const zIndex = i === lastTurned ? leaves.length + 2 : flipped ? i + 1 : leaves.length - i;
+          // Phone browsers flash buried pages through the 3D stack, so only keep the neighbours drawn.
+          const hidden = !desktop && Math.abs(i - cur) > 1 && i !== lastTurned;
           return (
-            <div key={i} className={`${s.leaf} ${flipped ? s.flipped : ''}`} style={{ zIndex }}>
+            <div
+              key={i}
+              className={`${s.leaf} ${flipped ? s.flipped : ''}`}
+              style={{ zIndex, visibility: hidden ? 'hidden' : undefined }}
+            >
               <div
-                className={`${s.face} ${s.front}`}
+                // Android hides scrollable boxes while they rotate, so only the settled page scrolls.
+                className={`${s.face} ${s.front} ${!desktop && i === cur && i !== lastTurned ? s.scroll : ''}`}
                 inert={i !== cur ? true : undefined}
                 onClick={(e) => onPageClick(e, 1)}
               >
