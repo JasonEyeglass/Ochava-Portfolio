@@ -1,0 +1,57 @@
+.dog {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.tag {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 51;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.tag[data-ready] {
+  opacity: 1;
+}
+
+.name {
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  background: rgba(29, 20, 13, 0.75);
+  color: var(--gold);
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Hidden with opacity, not display, so screen readers still read it. */
+.bubble {
+  order: -1;
+  width: max-content;
+  max-width: 14rem;
+  margin-bottom: 0.4rem;
+  padding: 0.5em 0.8em;
+  border-radius: 0.6em;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.tag[data-talk] .bubble {
+  opacity: 1;
+  transform: none;
+}

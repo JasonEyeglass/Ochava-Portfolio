@@ -54,7 +54,7 @@ export function Contents({ goTo }) {
       <ol className={s.toc}>
         {CONTENTS.map(([label, page, id]) => (
           <li key={id}>
-            <a href={`#${id}`} onClick={(e) => goTo(e, Math.floor(page / 2) + 1)}>
+            <a href={`#${id}`} onClick={(e) => goTo(e, page + 1)}>
               <span>{label}</span>
               <span className={s.dots} />
               <span>{page}</span>

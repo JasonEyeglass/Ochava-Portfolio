@@ -416,12 +416,8 @@
     padding: 2em 1.4em 3.4em;
   }
 
-  .cover {
-    min-height: 80vh;
-  }
-
   /* keyboard hints mean nothing on a phone */
-  .prompt,
+  .prompt kbd,
   .note {
     display: none;
   }
