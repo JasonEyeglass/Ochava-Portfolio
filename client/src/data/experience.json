@@ -1,26 +1,42 @@
 [
   {
-    "id": "exp-1",
-    "role": "Full-Stack Developer",
-    "company": "Freelance / Personal Projects",
-    "period": "2023 — Present",
-    "description": "Building modern web applications with React and Node.js. Focus on clean architecture, performance, and user experience.",
-    "highlights": [
-      "Developed portfolio and client-facing web applications",
-      "Implemented REST APIs with validation and security best practices",
-      "Deployed full-stack apps to Vercel and Render"
+    "id": "ctp",
+    "role": "Data Analyst Intern",
+    "org": "CTP Red III Corp.",
+    "period": "Feb – May 2026",
+    "points": [
+      "Validated and organized worksheets that track utility use for rented spaces",
+      "Reconciled account balances against space-use logs",
+      "Cleaned and audited data in Excel to produce monthly summaries"
     ]
   },
   {
-    "id": "exp-2",
-    "role": "Web Developer",
-    "company": "Academic & Personal Projects",
-    "period": "2021 — 2023",
-    "description": "Built responsive websites and interactive frontends while learning modern JavaScript frameworks and backend development.",
-    "highlights": [
-      "Created responsive UI components with React",
-      "Integrated third-party APIs for dynamic content",
-      "Practiced version control and collaborative workflows with Git"
+    "id": "capstone",
+    "role": "System Analyst & Documentation Lead",
+    "org": "Capstone: Student Advising System, KLD",
+    "period": "BSIS capstone",
+    "points": [
+      "Mapped school rules and user needs into system workflows",
+      "Validated the database tables against the front-end forms",
+      "Wrote the system manuals and reports for the school"
+    ]
+  },
+  {
+    "id": "kldiss",
+    "role": "President",
+    "org": "KLD Information Systems Society",
+    "period": "2024 – 2026",
+    "points": [
+      "Led the society's projects and events with the school administration"
+    ]
+  },
+  {
+    "id": "icdi",
+    "role": "Vice President",
+    "org": "ICDI Student Government",
+    "period": "2022 – 2023",
+    "points": [
+      "Kept the records and prepared reports for student programs"
     ]
   }
 ]

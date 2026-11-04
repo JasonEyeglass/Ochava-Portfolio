@@ -27,3 +27,6 @@ Thumbs.db
 
 # Vite
 *.local
+
+# Local AI context dump
+repomix-output.xml

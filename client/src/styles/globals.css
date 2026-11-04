@@ -1,5 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-@import './variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Press+Start+2P&display=swap');
+
+:root {
+  /* The site is a book on a dark desk in every color scheme. */
+  color-scheme: dark;
+  --desk: #1d140d;
+  --desk-ink: #e9dcc4;
+  --paper: #f4ecdc;
+  --ink: #2a2118;
+  --ink-soft: #7a6a56;
+  --rule: #d9cbb2;
+  --chip: #e8dcc4;
+  --accent: #b0451f;
+  --cover: #3a1f17;
+  --gold: #d9b26a;
+  --gold-dim: rgba(217, 178, 106, 0.45);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-label: 'Inter', system-ui, sans-serif;
+  --font-pixel: 'Press Start 2P', ui-monospace, monospace;
+}
 
 *,
 *::before,
@@ -11,15 +31,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--nav-height);
 }
 
 body {
   font-family: var(--font-sans);
-  font-size: var(--text-base);
   line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  color: var(--desk-ink);
+  background-color: var(--desk);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -31,6 +49,12 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 button {
@@ -45,67 +69,6 @@ ol {
   list-style: none;
 }
 
-input,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-}
-
 ::selection {
-  background: var(--color-primary-muted);
-  color: var(--color-text);
-}
-
-.section {
-  padding: var(--space-24) var(--space-6);
-}
-
-.sectionInner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  border-radius: var(--radius-lg);
-  transition: all var(--transition);
-  white-space: nowrap;
-}
-
-.btnPrimary {
-  background: var(--color-primary);
-  color: var(--color-btn-text);
-}
-
-.btnPrimary:hover {
-  background: var(--color-primary-hover);
-  transform: translateY(-1px);
-}
-
-.btnOutline {
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
-  background: transparent;
-}
-
-.btnOutline:hover {
-  background: var(--color-primary-muted);
-}
-
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  background: rgba(176, 69, 31, 0.25);
 }
