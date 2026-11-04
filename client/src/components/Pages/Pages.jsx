@@ -73,7 +73,7 @@ export function About() {
   return (
     <Page id="about" num="1" kicker="About the author">
       <figure className={s.polaroid}>
-        <img src="/img/karl.jpg" alt="Karl Jason Ochava" width="227" height="222" />
+        <img src="/img/karl-grad.jpg" alt="Karl Jason Ochava in his KLD graduation toga" width="560" height="700" />
       </figure>
       <h2 className={s.h2}>Hi, I'm Karl.</h2>
       <p className={s.lead}>
